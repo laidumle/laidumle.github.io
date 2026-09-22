@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大鱼吃小鱼小游戏大全，提供经典的海洋生存类游戏推荐，包含不同难度的吃鱼玩法、高清画质及休闲益智的在线游戏体验。">
+    <meta name="keywords" content="大鱼吃小鱼小游戏大全,网页游戏,海洋生存,益智游戏,休闲游戏">
+    <title>大鱼吃小鱼小游戏大全 - 经典海洋生存游戏推荐与试玩</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #006994;
+            --accent-color: #ff9800;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f4f8fb;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-box {
+                display: block;
+            }
+            .search-box input {
+                padding: 8px 16px;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                outline: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #006994 0%, #00334e 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Intro Section */
+        .intro {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .intro h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .intro p {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        /* Filter Tags */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .filter-tag {
+            padding: 6px 16px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tag.active, .filter-tag:hover {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .game-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 160px;
+            background: #e0f7fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .game-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .game-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .difficulty-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #eee;
+            font-weight: 600;
+        }
+
+        .diff-easy { color: #4caf50; background: #e8f5e9; }
+        .diff-medium { color: #ff9800; background: #fff3e0; }
+        .diff-hard { color: #f44336; background: #ffebee; }
+
+        .play-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .play-btn:hover {
+            background: #005670;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            margin-top: 60px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .guide-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .guide-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .guide-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .guide-card p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                大鱼吃小鱼<span>游戏大全</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索游戏名称...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>探索深海霸主之路</h1>
+        <p>在这里找到最适合你的“大鱼吃小鱼”小游戏，从经典网页版到高清手游移植，体验吞噬成长的快感。</p>
+        <a href="#games" class="cta-button">立即开始游戏</a>
+    </section>
+
+    <main class="container" id="games">
+        <!-- 玩法说明 -->
+        <section class="intro">
+            <h2>什么是“大鱼吃小鱼”？</h2>
+            <p>“大鱼吃小鱼”是一款经典的生态生存类游戏。玩家控制一条小鱼，在充满危险的海洋中游动。游戏的核心机制非常简单直观：你需要吞噬比自己体型小的鱼来获得经验并长大，同时必须躲避比自己体型大的捕食者。随着体型的增长，你能吃的食物种类也会越来越多，最终成为海洋霸主。</p>
+            <p>这类游戏不仅考验反应速度，还往往包含关卡挑战、道具收集和丰富的背景故事，非常适合休闲娱乐。</p>
+        </section>
+
+        <!-- 分类筛选 -->
+        <div class="filters">
+            <button class="filter-tag active">全部游戏</button>
+            <button class="filter-tag">经典网页版</button>
+            <button class="filter-tag">高清移植版</button>
+            <button class="filter-tag">解压闯关</button>
+            <button class="filter-tag">趣味养成</button>
+        </div>
+
+        <!-- 游戏列表 -->
+        <section class="game-grid">
+            <!-- Game 1 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fish1/400/250" alt="深海进化论游戏封面">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">深海进化论</h3>
+                    <p class="card-desc">经典的2D横版游戏，拥有丰富的海洋生物种类，通过吞噬升级，体验从浮游生物到深海巨兽的进化过程。</p>
+                    <div class="card-meta">
+                        <span class="difficulty-badge diff-medium">中等难度</span>
+                        <span>网页版</span>
+                    </div>
+                    <a href="#" class="play-btn">立即试玩</a>
+                </div>
+            </article>
+
+            <!-- Game 2 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fish2/400/250" alt="疯狂海洋大冒险">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">疯狂海洋大冒险</h3>
+                    <p class="card-desc">加入了道具系统的进化版，玩家可以寻找炮弹、护盾等辅助物品，在复杂的海洋环境中生存下来。</p>
+                    <div class="card-meta">
+                        <span class="difficulty-badge diff-hard">高难度</span>
+                        <span>闯关模式</span>
+                    </div>
+                    <a href="#" class="play-btn">立即试玩</a>
+                </div>
+            </article>
+
+            <!-- Game 3 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fish3/400/250" alt="海洋霸主传说">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">海洋霸主传说</h3>
+                    <p class="card-desc">3D视觉效果的游戏，拥有逼真的水流反馈和物理碰撞效果，沉浸感极强。</p>
+                    <div class="card-meta">
+                        <span class="difficulty-badge diff-easy">休闲</span>
+                        <span>3D版</span>
+                    </div>
+                    <a href="#" class="play-btn">立即试玩</a>
+                </div>
+            </article>
+
+            <!-- Game 4 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fish4/400/250" alt="小鱼吃大鱼高清版">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">小鱼吃大鱼高清版</h3>
+                    <p class="card-desc">还原了最纯粹的玩法，色彩明快，操作流畅，适合所有年龄段的玩家放松心情。</p>
+                    <div class="card-meta">
+                        <span class="difficulty-badge diff-easy">简单</span>
+                        <span>休闲</span>
+                    </div>
+                    <a href="#" class="play-btn">立即试玩</a>
+                </div>
+            </article>
+
+            <!-- Game 5 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fish5/400/250" alt="深海迷航">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">深海迷航</h3>
+                    <p class="card-desc">结合了RPG元素，你需要收集经验值解锁新技能，如加速、隐身等，制定不同的生存策略。</p>
+                    <div class="card-meta">
+                        <span class="difficulty-badge diff-medium">中等</span>
+                        <span>RPG元素</span>
+                    </div>
+                    <a href="#" class="play-btn">立即试玩</a>
+                </div>
+            </article>
+
+            <!-- Game 6 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fish6/400/250" alt="小小渔夫">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">小小渔夫</h3>
+                    <p class="card-desc">独特的视角玩法，在鱼群中穿梭，不仅考验眼力，还需要快速判断最佳捕食时机。</p>
+                    <div class="card-meta">
+                        <span class="difficulty-badge diff-hard">挑战</span>
+                        <span>反应类</span>
+                    </div>
+                    <a href="#" class="play-btn">立即试玩</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- 游戏指南 -->
+        <section class="guide-section">
+            <h2 style="font-size: 1.8rem; margin-bottom: 24px; text-align: center;">新手游玩指南</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>如何快速升级？</h3>
+                    <p>不要一开始就追求速度，保持冷静，寻找颜色较浅、体型较小的鱼作为食物。避开红色或深色的鱼类，它们通常具有攻击性或体型巨大。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>道具的使用技巧</h3>
+                    <p>在部分版本中，会出现护盾道具。当周围有危险的大鱼时，立即开启护盾可以暂时免疫伤害，这是反杀或逃跑的关键。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>避开危险区域</h3>
+                    <p>注意观察背景中的漩涡或暗礁，这些地方虽然可能藏有大量食物，但也可能是大鱼的埋伏点，进入前务必确认周围环境。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>利用环境优势</h3>
+                    <p>利用水草或岩石的遮挡物来躲避大鱼，通过快速转向和加速来拉开距离，这是生存的高级技巧。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 大鱼吃小鱼小游戏大全 - 专注提供优质休闲游戏体验</p>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系方式</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
