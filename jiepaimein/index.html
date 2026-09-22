@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="街拍美女 - 精选城市时尚街拍、潮流穿搭灵感与街头摄影艺术分享。收录全球最新街拍图片，提供高清摄影作品欣赏与时尚资讯。">
+    <meta name="keywords" content="街拍美女,街头摄影,时尚穿搭,城市街拍,潮流穿搭">
+    <title>街拍美女 - 城市时尚与街头摄影艺术分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #ff4081;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 16px;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 240px;
+            border-color: var(--primary-color);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .category-title {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* Gallery Section */
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+        }
+
+        .more-link {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            padding-bottom: 60px;
+        }
+
+        .photo-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s;
+        }
+
+        .photo-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .photo-wrapper {
+            position: relative;
+            padding-top: 133%; /* 3:4 Aspect Ratio */
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .photo-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .photo-card:hover .photo-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .photo-info {
+            padding: 16px;
+        }
+
+        .photo-location {
+            font-size: 12px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .photo-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .photo-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Sidebar */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            padding-bottom: 60px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-section {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .trend-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .trend-list li:last-child {
+            border-bottom: none;
+        }
+
+        .trend-num {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ddd;
+            min-width: 20px;
+        }
+
+        .trend-item h4 {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .trend-item span {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <span>街拍美女</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新街拍</a></li>
+                    <li><a href="#">潮流穿搭</a></li>
+                    <li><a href="#">摄影师专栏</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索穿搭风格、地点...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>捕捉城市的时尚脉搏</h1>
+                <p>汇聚全球街头摄影师的优秀作品，探索最前沿的时尚穿搭与生活美学。</p>
+                <a href="#gallery" class="btn-primary">开始浏览</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <section class="categories">
+                <div class="category-grid">
+                    <article class="category-card">
+                        <span class="category-icon">👠</span>
+                        <h3 class="category-title">都市通勤</h3>
+                    </article>
+                    <article class="category-card">
+                        <span class="category-icon">☕</span>
+                        <h3 class="category-title">周末休闲</h3>
+                    </article>
+                    <article class="category-card">
+                        <span class="category-icon">💃</span>
+                        <h3 class="category-title">派对夜场</h3>
+                    </article>
+                    <article class="category-card">
+                        <span class="category-icon">🎒</span>
+                        <h3 class="category-title">旅行随拍</h3>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="content-wrapper">
+                <!-- Gallery -->
+                <section id="gallery">
+                    <div class="section-title">
+                        <h2>精选街拍作品</h2>
+                        <a href="#" class="more-link">查看更多 &rarr;</a>
+                    </div>
+                    <div class="gallery-grid">
+                        <article class="photo-card">
+                            <div class="photo-wrapper">
+                                <img src="https://picsum.photos/seed/fashion1/400/533" alt="街拍作品：秋日复古穿搭">
+                            </div>
+                            <div class="photo-info">
+                                <div class="photo-location">📍 上海 · 外滩</div>
+                                <h3 class="photo-title">秋日复古风：焦糖色大衣与贝雷帽的搭配</h3>
+                                <div class="photo-meta">
+                                    <span>👁 2.4k</span>
+                                    <span>💬 128</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="photo-card">
+                            <div class="photo-wrapper">
+                                <img src="https://picsum.photos/seed/fashion2/400/533" alt="街拍作品：极简主义穿搭">
+                            </div>
+                            <div class="photo-info">
+                                <div class="photo-location">📍 北京 · 三里屯</div>
+                                <h3 class="photo-title">极简主义：黑白灰的永恒魅力</h3>
+                                <div class="photo-meta">
+                                    <span>👁 1.8k</span>
+                                    <span>💬 95</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="photo-card">
+                            <div class="photo-wrapper">
+                                <img src="https://picsum.photos/seed/fashion3/400/533" alt="街拍作品：春日清新穿搭">
+                            </div>
+                            <div class="photo-info">
+                                <div class="photo-location">📍 成都 · 春熙路</div>
+                                <h3 class="photo-title">春日清新：碎花裙与帆布鞋的减龄组合</h3>
+                                <div class="photo-meta">
+                                    <span>👁 3.1k</span>
+                                    <span>💬 210</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="photo-card">
+                            <div class="photo-wrapper">
+                                <img src="https://picsum.photos/seed/fashion4/400/533" alt="街拍作品：酷飒风格穿搭">
+                            </div>
+                            <div class="photo-info">
+                                <div class="photo-location">📍 香港 · 尖沙咀</div>
+                                <h3 class="photo-title">酷飒风格：皮衣与工装裤的硬朗线条</h3>
+                                <div class="photo-meta">
+                                    <span>👁 4.5k</span>
+                                    <span>💬 305</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="photo-card">
+                            <div class="photo-wrapper">
+                                <img src="https://picsum.photos/seed/fashion5/400/533" alt="街拍作品：文艺气质穿搭">
+                            </div>
+                            <div class="photo-info">
+                                <div class="photo-location">📍 杭州 · 滕王阁</div>
+                                <h3 class="photo-title">文艺气质：亚麻材质与手提包的优雅感</h3>
+                                <div class="photo-meta">
+                                    <span>👁 1.9k</span>
+                                    <span>💬 112</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="photo-card">
+                            <div class="photo-wrapper">
+                                <img src="https://picsum.photos/seed/fashion6/400/533" alt="街拍作品：运动活力穿搭">
+                            </div>
+                            <div class="photo-info">
+                                <div class="photo-location">📍 深圳 · 深圳湾公园</div>
+                                <h3 class="photo-title">运动活力：卫衣与运动鞋的舒适穿搭</h3>
+                                <div class="photo-meta">
+                                    <span>👁 2.2k</span>
+                                    <span>💬 140</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">热门话题</h3>
+                        <ul class="trend-list">
+                            <li>
+                                <span class="trend-num">1</span>
+                                <div class="trend-item">
+                                    <h4>#多巴胺穿搭#</h4>
+                                    <span>讨论量 10w+</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="trend-num">2</span>
+                                <div class="trend-item">
+                                    <h4>#早春露腿穿搭#</h4>
+                                    <span>讨论量 8.5w</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="trend-num">3</span>
+                                <div class="trend-item">
+                                    <h4>#极简主义风格#</h4>
+                                    <span>讨论量 6.2w</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="trend-num">4</span>
+                                <div class="trend-item">
+                                    <h4>#复古港风#</h4>
+                                    <span>讨论量 5.8w</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="trend-num">5</span>
+                                <div class="trend-item">
+                                    <h4>#法式慵懒风#</h4>
+                                    <span>讨论量 4.9w</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">摄影师推荐</h3>
+                        <ul class="trend-list">
+                            <li>
+                                <img src="https://picsum.photos/seed/avatar1/50/50" alt="摄影师头像" style="border-radius:50%; margin-right:10px;">
+                                <div class="trend-item">
+                                    <h4>光影捕手</h4>
+                                    <span>专注人像摄影</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://picsum.photos/seed/avatar2/50/50" alt="摄影师头像" style="border-radius:50%; margin-right:10px;">
+                                <div class="trend-item">
+                                    <h4>街头漫步者</h4>
+                                    <span>城市探索记录</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://picsum.photos/seed/avatar3/50/50" alt="摄影师头像" style="border-radius:50%; margin-right:10px;">
+                                <div class="trend-item">
+                                    <h4>色彩侦探</h4>
+                                    <span>色彩搭配专家</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>街拍美女</h3>
+                    <p>致力于分享全球最优质的街头摄影作品，为摄影爱好者与时尚爱好者提供灵感交流的平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>栏目导航</h3>
+                    <ul>
+                        <li><a href="#">最新收录</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">摄影教程</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <p>微信公众号：街拍灵感</p>
+                    <p>新浪微博：@街拍美女</p>
+                    <p>Instagram：@StreetStyleCN</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 街拍美女平台 版权所有. 仅供展示使用，图片来自网络。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
