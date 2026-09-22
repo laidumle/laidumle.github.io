@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="麦乐迪电话官方服务中心，提供电话机产品选购指南、功能解析、常见故障排查及售后服务联系信息。">
+    <meta name="keywords" content="麦乐迪电话,电话机,无绳电话,老人电话,家用座机,麦乐迪官网">
+    <title>麦乐迪电话-家用电话机选购指南与服务中心</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f0f4f8;
+            --accent-color: #ff6b35;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e1e4e8;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .contact-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-btn:hover {
+            background-color: #004494;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        /* Main Content Grid */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Feature List */
+        .feature-list {
+            background-color: var(--secondary-color);
+            padding: 40px;
+            border-radius: var(--radius);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            min-width: 50px;
+        }
+
+        .feature-content h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .feature-content p {
+            color: var(--text-gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            padding-left: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-color)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M15 10l5 5"></path><path d="M15 15l5-5"></path></svg>
+                <span>麦乐迪电话</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#products">产品系列</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="tel:400-123-4567" class="contact-btn">联系客服</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>经典与科技的融合</h1>
+            <p>麦乐迪电话致力于提供高品质的家用电话解决方案，无论是传统的无绳座机，还是适合老人的大字屏电话，我们都为您提供清晰、稳定的通讯体验。</p>
+            <div class="hero-tags">
+                <span class="tag">无绳电话</span>
+                <span class="tag">老人专用</span>
+                <span class="tag">高清铃声</span>
+                <span class="tag">免提通话</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Product Categories -->
+        <section id="products">
+            <h2 class="section-title">热门产品系列</h2>
+            <div class="grid-layout">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/phone1/400/250" alt="麦乐迪无绳电话机" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">麦乐迪 M7 无绳电话</h3>
+                        <p class="card-desc">超长待机，双机双待，支持蓝牙连接手机，轻松实现固话与手机的互通，适合现代家庭使用。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/phone2/400/250" alt="麦乐迪老人大字电话" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">麦乐迪 老人关怀系列</h3>
+                        <p class="card-desc">超大按键、大音量喇叭、一键SOS紧急呼叫功能，专为老年群体设计，操作简单，安全可靠。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/phone3/400/250" alt="麦乐迪高清彩屏电话" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">麦乐迪 彩屏可视电话</h3>
+                        <p class="card-desc">全彩屏幕显示，高清通话，支持视频通话功能，让远方亲人仿佛就在眼前，适合有老人的家庭。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features / Buying Guide -->
+        <section id="guide">
+            <h2 class="section-title">选购指南与核心优势</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">📡</div>
+                    <div class="feature-content">
+                        <h3>信号覆盖广，通话清晰</h3>
+                        <p>采用先进的扩频技术，有效减少通话杂音和断线情况，即使在墙体较厚的环境中也能保持清晰音质。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔋</div>
+                    <div class="feature-content">
+                        <h3>长效续航，待机无忧</h3>
+                        <p>标配高容量电池，座机待机可达数周，手柄通话时间超过10小时，彻底告别频繁充电的烦恼。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔊</div>
+                    <div class="feature-content">
+                        <h3>高保真音质，悦耳铃声</h3>
+                        <p>配备专业扬声器，支持多种音色铃声调节。针对听障人士，提供超高分贝模式，确保不错过任何来电。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">麦乐迪电话如何连接网络？ <span>+</span></div>
+                <div class="faq-answer">大多数麦乐迪系列电话机直接连接家用电话线即可使用。如果是智能可视电话，需确保家庭宽带网络正常，并根据说明书在设置菜单中输入路由器密码。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">电话机充电后为什么还是无法开机？ <span>+</span></div>
+                <div class="faq-answer">请检查手柄与座机的底座是否完全插紧，有时接触不良会导致无法充电。如果充电正常但仍无法开机，建议长按电源键10秒进行复位重启。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何设置来电铃声？ <span>+</span></div>
+                <div class="faq-answer">在待机状态下，按下“设置”或“菜单”键，选择“铃声设置”，然后使用数字键选择您喜欢的音色，最后按确认键保存。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">老人电话的一键SOS功能怎么用？ <span>+</span></div>
+                <div class="faq-answer">按下电话机侧面或底部的红色SOS按钮，电话将自动拨打预设的紧急联系人号码（如子女手机），并开启高分贝报警声，提醒周围人注意。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于麦乐迪</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">企业荣誉</a></li>
+                        <li><a href="#">招贤纳士</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">无绳电话系列</a></li>
+                        <li><a href="#">老人关怀系列</a></li>
+                        <li><a href="#">可视电话系列</a></li>
+                        <li><a href="#">配件专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">售后政策</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">在线报修</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@mailedi.com</li>
+                        <li>地址：中国·某市科技园区88号</li>
+                        <li>服务时间：周一至周日 8:00-21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 麦乐迪电话官方服务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
