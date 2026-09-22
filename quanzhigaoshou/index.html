@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全职高手巅峰荣耀 - 唐柔叶修角色档案与荣耀殿堂</title>
+    <meta name="description" content="全职高手巅峰荣耀官方网站，提供叶修、唐柔等热门角色详细背景故事、荣耀殿堂等级查询、职业图鉴及游戏攻略。深入了解全职高手巅峰荣耀世界，探索战斗与荣耀的极致体验。">
+    <meta name="keywords" content="全职高手巅峰荣耀, 叶修, 唐柔, 荣耀殿堂, 全职高手, 漫画, 角色介绍">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+            background-color: rgba(243, 156, 18, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Character Cards Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background-color: #eee;
+            border-radius: 10px;
+            color: #555;
+        }
+
+        .card-footer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .rank-list {
+            counter-reset: rank;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-item::before {
+            counter-increment: rank;
+            content: counter(rank);
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .rank-item:nth-child(1)::before { background-color: #ffd700; }
+        .rank-item:nth-child(2)::before { background-color: #c0c0c0; }
+        .rank-item:nth-child(3)::before { background-color: #cd7f32; }
+
+        .rank-name {
+            font-weight: 500;
+        }
+
+        .rank-score {
+            margin-left: auto;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #ecf0f1;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <span>荣耀</span>殿堂
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">角色图鉴</a></li>
+                <li><a href="#">职业介绍</a></li>
+                <li><a href="#">攻略资讯</a></li>
+                <li><a href="#">排行榜</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>全职高手巅峰荣耀</h1>
+        <p>重返荣耀战场，重温经典时刻。这里汇聚了叶修、唐柔等顶尖高手的角色档案、技能解析与荣耀殿堂等级查询。</p>
+        <a href="#characters" class="btn">探索角色档案</a>
+    </div>
+</section>
+
+<main class="container" id="characters">
+    <!-- Main Content: Characters -->
+    <section>
+        <div class="section-title">
+            <h2>热门角色推荐</h2>
+            <a href="#">查看全部 &rarr;</a>
+        </div>
+        
+        <div class="character-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">S级</span>
+                    <img src="https://picsum.photos/seed/ye/400/300" alt="叶修">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">叶修</h3>
+                    <p class="card-desc">荣耀教科书，斗神，曾任嘉世战队队长。擅长战斗法师，拥有“一叶之秋”账号。精通各种战术与副本攻略。</p>
+                    <div class="card-tags">
+                        <span class="tag">战斗法师</span>
+                        <span class="tag">战术大师</span>
+                        <span class="tag">嘉世战队</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>人气值: 9.8</span>
+                        <a href="#" style="color:var(--accent-color)">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">A级</span>
+                    <img src="https://picsum.photos/seed/tang/400/300" alt="唐柔">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">唐柔</h3>
+                    <p class="card-desc">荣耀新人，第十区“包子入侵”账号的拥有者。性格坚韧，由零开始挑战巅峰，是叶修重要的队友与对手。</p>
+                    <div class="card-tags">
+                        <span class="tag">柔道</span>
+                        <span class="tag">新人王</span>
+                        <span class="tag">蓝河战队</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>人气值: 9.5</span>
+                        <a href="#" style="color:var(--accent-color)">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">S级</span>
+                    <img src="https://picsum.photos/seed/bai/400/300" alt="苏沐橙">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">苏沐橙</h3>
+                    <p class="card-desc">沐雨橙风，叶修的搭档，枪炮师。拥有极高的战斗素养，是叶修背后最可靠的支援，也是嘉世战队的主力。</p>
+                    <div class="card-tags">
+                        <span class="tag">枪炮师</span>
+                        <span class="tag">神级辅助</span>
+                        <span class="tag">嘉世战队</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>人气值: 9.7</span>
+                        <a href="#" style="color:var(--accent-color)">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">A级</span>
+                    <img src="https://picsum.photos/seed/lin/400/300" alt="林敬言">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">林敬言</h3>
+                    <p class="card-desc">无痕，鬼剑士。霸图战队队长，拥有“碎星枪”等华丽技能，被誉为“枪剑士”的巅峰代表。</p>
+                    <div class="card-tags">
+                        <span class="tag">鬼剑士</span>
+                        <span class="tag">霸图队长</span>
+                        <span class="tag">技术流</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>人气值: 9.4</span>
+                        <a href="#" style="color:var(--accent-color)">详情</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="sidebar-box">
+            <div class="section-title" style="font-size: 1.2rem; border:none; padding:0;">
+                荣耀殿堂等级
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">
+                根据全服玩家综合数据统计，前十名顶尖高手排名。
+            </p>
+            <div class="rank-list">
+                <div class="rank-item">
+                    <span class="rank-name">叶修</span>
+                    <span class="rank-score">9980分</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-name">周泽楷</span>
+                    <span class="rank-score">9850分</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-name">韩文清</span>
+                    <span class="rank-score">9720分</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-name">楚云秀</span>
+                    <span class="rank-score">9600分</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-name">唐柔</span>
+                    <span class="rank-score">9550分</span>
+                </div>
+            </div>
+            <a href="#" style="display:block; text-align:center; font-size:0.9rem; color:var(--accent-color); margin-top:10px;">查看完整榜单</a>
+        </div>
+
+        <div class="sidebar-box">
+            <div class="section-title" style="font-size: 1.2rem; border:none; padding:0;">
+                热门职业图鉴
+            </div>
+            <ul style="font-size: 0.9rem;">
+                <li style="padding: 8px 0; border-bottom: 1px dashed #eee;"><a href="#">战斗法师 - 连招解析</a></li>
+                <li style="padding: 8px 0; border-bottom: 1px dashed #eee;"><a href="#">神枪手 - 爆发技巧</a></li>
+                <li style="padding: 8px 0; border-bottom: 1px dashed #eee;"><a href="#">元素法师 - 控场指南</a></li>
+                <li style="padding: 8px 0; border-bottom: 1px dashed #eee;"><a href="#">刺客 - 隐身机制</a></li>
+                <li style="padding: 8px 0;"><a href="#">战斗法师 - 装备推荐</a></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">联系合作</a>
+            <a href="#">免责声明</a>
+            <a href="#">隐私政策</a>
+        </div>
+        <p class="copyright">
+            本站为粉丝互动展示页面，内容仅供参考。<br>
+            “全职高手”及相关角色版权归原作者及出版方所有。
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
